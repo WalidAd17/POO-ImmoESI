@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TitledPane collapsible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TP_GUI.showBien">
+       <graphic>
+           <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="584.0">
+               <children>
+                   <Label fx:id="onBoarding" prefHeight="17.0" prefWidth="179.0" text="Affichage du Bien ">
+                       <HBox.margin>
+                           <Insets left="30.0" />
+                       </HBox.margin>
+                   </Label>
+               </children>
+           </HBox>
+       </graphic>
+   <content>
+      <GridPane prefHeight="343.0" prefWidth="403.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="155.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="101.0" minHeight="3.0" prefHeight="48.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="104.0" prefWidth="508.0" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="206.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="trns" layoutX="136.0" layoutY="56.0" text="Transaction" />
+                        <Label fx:id="address" text="Address" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="props" layoutX="10.0" layoutY="10.0" text="Propriétaire" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="stat" layoutX="10.0" layoutY="27.0" text="Status juridique" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="108.0" prefWidth="196.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="wil" text="Wilaya" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="sup" layoutX="10.0" layoutY="10.0" text="Superficie" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="date" layoutX="10.0" layoutY="27.0" prefHeight="17.0" prefWidth="104.0" text="Date" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="back" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Back" HBox.hgrow="ALWAYS" />
+                  <Pane prefHeight="25.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                <Button fx:id="archive" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#archive" prefHeight="25.0" prefWidth="90.0" text="Archive" />
+                  <Button fx:id="contact" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" text="Contact Admin" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="244.0" prefWidth="580.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="121.0" prefWidth="290.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="121.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                           <effect>
+                              <SepiaTone />
+                           </effect>
+                           <image>
+                              <Image url="@../../../../Downloads/djelloul.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="121.0" prefWidth="290.0">
+                     <children>
+                        <Label fx:id="description" prefHeight="67.0" prefWidth="130.0" text="Description" wrapText="true" />
+                     </children></HBox>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </content>
+</TitledPane>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TP_GUI.ControllerHomeMember">
+   <children>
+      <Circle fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" StackPane.alignment="CENTER" />
+      <TitledPane alignment="CENTER_RIGHT" collapsible="false">
+         <graphic>
+            <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="584.0">
+               <children>
+                  <Label fx:id="onBoarding" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="179.0" text="Welcome Ahmed">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="logOut" minWidth="0.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Log Out" />
+               </children>
+            </HBox>
+         </graphic>
+         <content>
+            <TabPane prefHeight="500.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="BIENS">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0">
+                           <children>
+                              <ScrollPane prefHeight="472.0" prefWidth="602.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="561.0">
+                                       <children>
+                                          <ListView fx:id="biens" prefHeight="470.0" prefWidth="602.0" />
+                                          <HBox alignment="CENTER_RIGHT" layoutX="-3.0" layoutY="420.0" prefHeight="25.0" prefWidth="602.0">
+                                             <children>
+                                                <Button fx:id="add" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Ajotuer Bien">
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="MES BIENS">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="mesBiensListe" prefHeight="478.0" prefWidth="602.0" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab onSelectionChanged="#critUpdate" text="RECHERCHER">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0">
+                              <children>
+                              <GridPane prefHeight="471.0" prefWidth="602.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="152.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="319.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <ChoiceBox fx:id="transaction" prefWidth="150.0" />
+                                                <ChoiceBox fx:id="tdb" prefWidth="150.0" />
+                                                <ChoiceBox fx:id="wilaya" prefWidth="150.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <TextField fx:id="maxPrice" promptText="Maximum Price" />
+                                                <TextField fx:id="minPrice" layoutX="237.0" layoutY="22.0" promptText="Minimum Price" />
+                                                <TextField fx:id="supMin" layoutX="162.0" layoutY="22.0" promptText="Superficie minimale" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="58.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                             <children>
+                                                <TextField fx:id="nbPicMin" layoutX="162.0" layoutY="22.0" promptText="Pièces Minimum" />
+                                                <Button fx:id="search" mnemonicParsing="false" onAction="#UpdateSearch" prefHeight="25.0" prefWidth="125.0" text="Search" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <ScrollPane prefHeight="472.0" prefWidth="602.0" GridPane.rowIndex="1">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="561.0">
+                                             <children>
+                                                <ListView fx:id="searchResult" prefHeight="320.0" prefWidth="602.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </GridPane>
+                              </children>
+                          </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab fx:id="props" disable="true" onSelectionChanged="#updateProps" text="LES PROPRIOS">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="proprio" prefHeight="474.0" prefWidth="602.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="archive" disable="true" onSelectionChanged="#updateArchive" text="BIENS ARCHIVES">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="archiveList" prefHeight="475.0" prefWidth="602.0" />
+                           </children></AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab fx:id="message" disable="true" onSelectionChanged="#updateMessages" text="MESSAGES">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="messagesList" prefHeight="475.0" prefWidth="602.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+      </TitledPane>
+   </children>
+</StackPane>
